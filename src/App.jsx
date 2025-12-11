@@ -1,22 +1,14 @@
-import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import Filter from "./components/Filter";
+import Cards from "./components/Cards";
+import { fiterData, apiUrl } from "./Data";
 
 function App() {
-  const [text, setText] = useState("");
-  function fxnchange(e) {
-    setText(e.target.value);
-    console.log(text);
-  }
-
-  useEffect(() => {
-    console.log("listner added");
-    return console.log("listner removed");
-  }, []);
-
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <br />
-      <input type="text" onChange={fxnchange} />
+      <Navbar></Navbar>
+      <Filter fiterData={fiterData}></Filter>
+      <Cards></Cards>
     </div>
   );
 }
