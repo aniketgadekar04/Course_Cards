@@ -2,7 +2,7 @@ function Filter({ fiterData }) {
   return (
     <div>
       {fiterData.map((e) => {
-        return <button>{e.title}</button>;
+        return <button key={e.id}>{e.title}</button>;
       })}
     </div>
   );
