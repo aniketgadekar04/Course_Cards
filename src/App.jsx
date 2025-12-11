@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import Filter from "./components/Filter";
 import Cards from "./components/Cards";
-import { fiterData, apiUrl } from "./Data";
+import { fiterData} from "./Data";
 
 function App() {
   return (

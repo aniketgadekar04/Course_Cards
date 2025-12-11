@@ -1,7 +1,9 @@
-function Filter() {
+function Filter({ fiterData }) {
   return (
     <div>
-      <h1>This is Filter Component</h1>
+      {fiterData.map((e) => {
+        return <button>{e.title}</button>;
+      })}
     </div>
   );
 }
