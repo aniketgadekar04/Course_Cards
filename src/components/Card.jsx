@@ -1,7 +1,19 @@
-function Card() {
+import { FcLike } from "react-icons/fc";
+function Card({ course }) {
   return (
     <div>
-      <h1>This is Card Component</h1>
+      <div>
+        <img src={course.image.url} alt="" />
+        <div>
+          <button>
+            <FcLike fontSize={"1.75rem"}></FcLike>
+          </button>
+        </div>
+      </div>
+      <div>
+        <p>{course.title}</p>
+        <p>{course.description}</p>
+      </div>
     </div>
   );
 }
