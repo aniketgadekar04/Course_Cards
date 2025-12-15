@@ -1,9 +1,13 @@
+// import { BiCategory } from "react-icons/bi";
+
 function Filter({ fiterData }) {
   return (
-    <div>
-      {fiterData.map((e) => {
-        return <button key={e.id}>{e.title}</button>;
-      })}
+    <div className="w-11/12 flex flex-wrap max-w-max space-x-4 gap-y-4 mx-auto py-4 justify-center">
+      {fiterData.map((e) => (
+        <button className={`text-lg px-2 py-1 rounded-md font-medium text-white bg-black hover:bg-opacity-10 border-2 transition-all duration-300`} key={e.id}>{e.title}</button>
+      ))}
+
+      {/* ${category===data.title?"bg-opacity-60 border-white":"bg-opacity-40 border-transparent"} */}
     </div>
   );
 }

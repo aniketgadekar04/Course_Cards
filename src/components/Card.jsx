@@ -4,12 +4,13 @@ function Card({ course }) {
     <div>
       <div>
         <img src={course.image.url} alt="" />
-        <div>
-          <button>
-            <FcLike fontSize={"1.75rem"}></FcLike>
-          </button>
-        </div>
       </div>
+      <div>
+        <button>
+          <FcLike fontSize={"1.75rem"}></FcLike>
+        </button>
+      </div>
+
       <div>
         <p>{course.title}</p>
         <p>{course.description}</p>
