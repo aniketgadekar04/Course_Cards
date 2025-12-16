@@ -30,19 +30,22 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex bg-gray-500 flex-col min-h-screen">
       <div>
         <Navbar></Navbar>
       </div>
-      <div>
-        <Filter fiterData={fiterData}></Filter>
-      </div>
-      <div>
-        {/* cards ke andar hamne courses ka api data pass kiya hai. */}
 
-        {loading ? <Spinner /> : <Cards courses={courses}></Cards>}
+      <div>
+        <div>
+          <Filter fiterData={fiterData}></Filter>
+        </div>
+        <div className="w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center items-center min-h-[50vh]">
+          {/* cards ke andar hamne courses ka api data pass kiya hai. */}
 
-        {/* isme agar loading true hai to spinner dikhao nahito cards dikhao */}
+          {loading ? <Spinner /> : <Cards courses={courses}></Cards>}
+
+          {/* isme agar loading true hai to spinner dikhao nahito cards dikhao */}
+        </div>
       </div>
     </div>
   );
