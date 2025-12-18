@@ -4,6 +4,9 @@ import { toast } from "react-toastify";
 
 function Card({ course, likedCourses, setLikedCourses }) {
   // const [like, setLike] = useState(true);
+
+  const para = course.description.substr(0, 100);
+
   function clickHandler() {
     // setLike(!like);
     // like ? toast.info("Liked") : toast.error("Disliked");
@@ -44,7 +47,9 @@ function Card({ course, likedCourses, setLikedCourses }) {
         <h1 className="text-white pt-5 font-bold text-lg leading-6">
           {course.title}
         </h1>
-        <p className="mt-4 text-white">{course.description}</p>
+        <p className="mt-4 text-white">
+          {course.description.length > 100 ? para+'...': course.description}
+        </p>
       </div>
     </div>
   );

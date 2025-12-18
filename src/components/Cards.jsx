@@ -1,20 +1,25 @@
 import { useState } from "react";
 import Card from "./Card";
 
-function Cards({ courses }) {
+function Cards({ courses, category }) {
   // courses ke andar nested array hai to sabse pehle use simple karenge means ek single array me convert karenge. key values pair me to usme se hum sirf ab values ko lenge.
 
   const [likedCourses, setLikedCourses] = useState([]);
 
   function getCourses() {
-    let allCourses = [];
+    if (category === "All") {
+      let allCourses = [];
 
-    Object.values(courses).forEach((courseCategory) => {
-      courseCategory.forEach((course) => {
-        allCourses.push(course);
+      Object.values(courses).forEach((courseCategory) => {
+        courseCategory.forEach((course) => {
+          allCourses.push(course);
+        });
       });
-    });
-    return allCourses;
+      return allCourses;
+    } else {
+      //only spacific data pass category vala
+      return courses[category];
+    }
   }
 
   return (

@@ -1,12 +1,18 @@
 // import { BiCategory } from "react-icons/bi";
 
-function Filter({ fiterData }) {
+function Filter({ fiterData, category, setCategory }) {
+  
+  function clickHand(title) {
+    setCategory(title);
+  }
+
   return (
     <div className="w-11/12 flex flex-wrap max-w-max space-x-4 gap-y-4 mx-auto py-4 justify-center">
       {fiterData.map((e) => (
         <button
           className={`text-lg px-2 py-1 rounded-md font-medium text-white bg-black hover:bg-black/50 border-2 transition-all duration-300`}
           key={e.id}
+          onClick={() => clickHand(e.title)}
         >
           {e.title}
         </button>

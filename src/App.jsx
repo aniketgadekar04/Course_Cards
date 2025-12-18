@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 function App() {
   const [courses, setCourses] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [category, setCategory] = useState(fiterData[0].title);
 
   //yaha hamne api call karke uske andar ke data ko courses nam ke state me store kar liya hai.
 
@@ -37,12 +38,20 @@ function App() {
 
       <div>
         <div>
-          <Filter fiterData={fiterData}></Filter>
+          <Filter
+            category={category}
+            setCategory={setCategory}
+            fiterData={fiterData}
+          ></Filter>
         </div>
         <div className="w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center items-center min-h-[50vh]">
           {/* cards ke andar hamne courses ka api data pass kiya hai. */}
 
-          {loading ? <Spinner /> : <Cards courses={courses}></Cards>}
+          {loading ? (
+            <Spinner />
+          ) : (
+            <Cards courses={courses} category={category}></Cards>
+          )}
 
           {/* isme agar loading true hai to spinner dikhao nahito cards dikhao */}
         </div>
